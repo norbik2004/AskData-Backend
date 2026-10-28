@@ -1,0 +1,15 @@
+services:
+  database:
+    image: postgres:17.6
+    container_name: AskDataDatabase
+    ports:
+      - "5435:5432"
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - AskDataDatabase_pgdata:/var/lib/postgresql/data
+
+volumes:
+  AskDataDatabase_pgdata: { }
